@@ -12,10 +12,14 @@
       </e>
       <e p="bin" t="ExcludeRecursive" />
       <e p="Content" t="Include">
-        <e p="bootstrap-theme.css" t="Include" />
-        <e p="bootstrap-theme.css.map" t="Include" />
-        <e p="bootstrap-theme.min.css" t="Include" />
-        <e p="bootstrap-theme.min.css.map" t="Include" />
+        <e p="bootstrap-grid.css" t="Include" />
+        <e p="bootstrap-grid.css.map" t="Include" />
+        <e p="bootstrap-grid.min.css" t="Include" />
+        <e p="bootstrap-grid.min.css.map" t="Include" />
+        <e p="bootstrap-reboot.css" t="Include" />
+        <e p="bootstrap-reboot.css.map" t="Include" />
+        <e p="bootstrap-reboot.min.css" t="Include" />
+        <e p="bootstrap-reboot.min.css.map" t="Include" />
         <e p="bootstrap.css" t="Include" />
         <e p="bootstrap.css.map" t="Include" />
         <e p="bootstrap.min.css" t="Include" />
@@ -35,6 +39,7 @@
       </e>
       <e p="Global.asax" t="Include" />
       <e p="Global.asax.cs" t="Include" />
+      <e p="live-reload.js" t="Include" />
       <e p="Models" t="Include" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />

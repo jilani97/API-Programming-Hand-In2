@@ -4,43 +4,71 @@
 
 <div class="row">
     <div class="col-md-6">
-        <h1>Hi Where do you want to travel?</h1>
+        <h1>Hi Where do you want to travel ?</h1>
         
         
-        <p>FROM : <input> </p>
-        <p>TO : <input> </p>
-        <p>WHEN: <input> </p>
-        <p>DAY : <input> </p>
-        
-        
+        <p>FROM :</p> <input> 
+        <p>TO   :</p> <input>
+        <p>WHEN: <input> DAY : <input> </p>
+
     </div>
     <div class="col-md-6">
-        <h3><strong>TIME TABLE</strong></h3>
-        <table>
-            <thead></thead>
+        <h3 class="text-center"><strong>TIME TABLE</strong></h3>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Depart</th>
+                <th>Time left</th>
+                <th>Track</th>
+                <th>Train</th>
+                <th>Price</th>
+            </tr>
+            </thead>
             <tbody>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
+            <tr>
+                <td>09:00</td>
+                <td>1 min left</td>
+                <td>Track 3</td>
+                <td>L14</td>
+                <td>37,-</td>
+            </tr>
+            <tr>
+                <td>09:00</td>
+                <td>1 min left</td>
+                <td>Track 3</td>
+                <td>L14</td>
+                <td>37,-</td>
+            </tr>
+            <tr>
+                <td>09:00</td>
+                <td>1 min left</td>
+                <td>Track 3</td>
+                <td>L14</td>
+                <td>37,-</td>
+            </tr>
             </tbody>
-            <button>View more +</button>
         </table>
-        
+        <p>View more +</p>
         <p>
-            <a class="btn btn-default" href="#">PURCHASE TICKET &raquo;</a>
+            <div>
+                <a class="btn btn-default" href="#">PURCHASE TICKET &raquo;</a>
+            </div>
         </p>
     </div>
     <div class="col-md-4">
         <h1>Total passengers:</h1>
-        <table>
-            <thead></thead>
+        <table class="table">
             <tbody>
-            <tr><button>-</button> Adult(s) <button>+</button></tr>
-            <tr><button>-</button> Children <button>+</button></tr>
-            <tr><button>-</button> Student(s) <button>+</button></tr>
+            <tr>
+                <td><button>-</button> Adult(s) <button>+</button><texarea>0</texarea></td>
+            </tr>
+            <tr>
+                <td><button>-</button> Children <button>+</button><texarea>0</texarea></td>
+            </tr>
+            <tr>
+                <td><button>-</button> Student(s) <button>+</button><texarea>0</texarea></td>
+            </tr>
             </tbody>
-                   <button>View more +</button>
             </table>
     </div>
 </div>
