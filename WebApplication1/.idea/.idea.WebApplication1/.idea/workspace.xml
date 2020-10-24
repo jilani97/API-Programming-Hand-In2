@@ -23,6 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08190bff-8384-4027-9ab6-d6522831c130" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/Content/Images/cal_icon.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Content/Images/clockicon.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Content/Images/minus.png" afterDir="false" />
@@ -31,6 +32,16 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApplication1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApplication1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Home/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/Views/Home/purchase.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/Debug/.NETFramework,Version=v4.8.AssemblyAttributes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApplication1/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApplication1/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApplication1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApplication1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/HomeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Home/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication1.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication1.csproj" afterDir="false" />
+>>>>>>> f88c277f1113be49bff3037fc2cb72744c6e2c55
       <change beforePath="$PROJECT_DIR$/bin/WebApplication1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/WebApplication1.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/WebApplication1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/WebApplication1.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/WebApplication1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/WebApplication1.dll" afterDir="false" />
@@ -40,6 +51,13 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -51,7 +69,10 @@
         <option value="$PROJECT_DIR$/Web.config" />
         <option value="$PROJECT_DIR$/Controllers/HomeController.cs" />
         <option value="$PROJECT_DIR$/Content/Site.css" />
+        <option value="$PROJECT_DIR$/Views/Home/purchase.html" />
+        <option value="$PROJECT_DIR$/Views/Home/purchase.cshtml" />
         <option value="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" />
+        <option value="$PROJECT_DIR$/Controllers/HomeController.cs" />
         <option value="$PROJECT_DIR$/Views/Home/Index.cshtml" />
       </list>
     </option>
@@ -66,9 +87,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.environmentSetup" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -103,8 +126,13 @@
       <workItem from="1602799231430" duration="625000" />
       <workItem from="1602799991009" duration="375000" />
       <workItem from="1602882712706" duration="3384000" />
+<<<<<<< HEAD
       <workItem from="1602932858344" duration="9492000" />
       <workItem from="1603543725945" duration="10104000" />
+=======
+      <workItem from="1602932858344" duration="8706000" />
+      <workItem from="1603384591556" duration="2696000" />
+>>>>>>> f88c277f1113be49bff3037fc2cb72744c6e2c55
     </task>
     <servers />
   </component>
@@ -135,33 +163,61 @@
     </state>
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680/-3840.-1080.1920.1040@0.0.1280.680" timestamp="1602936385869" />
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1602799313749" />
+<<<<<<< HEAD
     <state width="1237" height="89" key="GridCell.Tab.0.bottom" timestamp="1603556230228">
       <screen x="0" y="0" width="1280" height="680" />
+=======
+    <state width="939" height="273" key="GridCell.Tab.0.bottom" timestamp="1603387813785">
+      <screen x="0" y="23" width="1920" height="1005" />
+>>>>>>> f88c277f1113be49bff3037fc2cb72744c6e2c55
     </state>
     <state width="916" height="162" key="GridCell.Tab.0.bottom/0.0.1280.680/-3840.-1080.1920.1040@-3840.-1080.1920.1040" timestamp="1602955122134" />
     <state width="1237" height="89" key="GridCell.Tab.0.bottom/0.0.1280.680/-3840.-1080.1920.1040@0.0.1280.680" timestamp="1603556230228" />
     <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1602800369872" />
+<<<<<<< HEAD
     <state width="1237" height="89" key="GridCell.Tab.0.center" timestamp="1603556230227">
       <screen x="0" y="0" width="1280" height="680" />
+=======
+    <state width="939" height="273" key="GridCell.Tab.0.bottom/0.23.1920.1005@0.23.1920.1005" timestamp="1603387813785" />
+    <state width="939" height="273" key="GridCell.Tab.0.center" timestamp="1603387813783">
+      <screen x="0" y="23" width="1920" height="1005" />
+>>>>>>> f88c277f1113be49bff3037fc2cb72744c6e2c55
     </state>
     <state width="916" height="162" key="GridCell.Tab.0.center/0.0.1280.680/-3840.-1080.1920.1040@-3840.-1080.1920.1040" timestamp="1602955122134" />
     <state width="1237" height="89" key="GridCell.Tab.0.center/0.0.1280.680/-3840.-1080.1920.1040@0.0.1280.680" timestamp="1603556230227" />
     <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1602800369872" />
+<<<<<<< HEAD
     <state width="1237" height="89" key="GridCell.Tab.0.left" timestamp="1603556230226">
       <screen x="0" y="0" width="1280" height="680" />
+=======
+    <state width="939" height="273" key="GridCell.Tab.0.center/0.23.1920.1005@0.23.1920.1005" timestamp="1603387813783" />
+    <state width="939" height="273" key="GridCell.Tab.0.left" timestamp="1603387813782">
+      <screen x="0" y="23" width="1920" height="1005" />
+>>>>>>> f88c277f1113be49bff3037fc2cb72744c6e2c55
     </state>
     <state width="916" height="162" key="GridCell.Tab.0.left/0.0.1280.680/-3840.-1080.1920.1040@-3840.-1080.1920.1040" timestamp="1602955122134" />
     <state width="1237" height="89" key="GridCell.Tab.0.left/0.0.1280.680/-3840.-1080.1920.1040@0.0.1280.680" timestamp="1603556230226" />
     <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1602800369872" />
+<<<<<<< HEAD
     <state width="1237" height="89" key="GridCell.Tab.0.right" timestamp="1603556230228">
       <screen x="0" y="0" width="1280" height="680" />
+=======
+    <state width="939" height="273" key="GridCell.Tab.0.left/0.23.1920.1005@0.23.1920.1005" timestamp="1603387813782" />
+    <state width="939" height="273" key="GridCell.Tab.0.right" timestamp="1603387813784">
+      <screen x="0" y="23" width="1920" height="1005" />
+>>>>>>> f88c277f1113be49bff3037fc2cb72744c6e2c55
     </state>
     <state width="916" height="162" key="GridCell.Tab.0.right/0.0.1280.680/-3840.-1080.1920.1040@-3840.-1080.1920.1040" timestamp="1602955122134" />
     <state width="1237" height="89" key="GridCell.Tab.0.right/0.0.1280.680/-3840.-1080.1920.1040@0.0.1280.680" timestamp="1603556230228" />
     <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1602800369872" />
+    <state width="939" height="273" key="GridCell.Tab.0.right/0.23.1920.1005@0.23.1920.1005" timestamp="1603387813784" />
     <state x="233" y="73" key="Rider.ProjectTemplateDialog.Size" timestamp="1602799224393">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="73" key="Rider.ProjectTemplateDialog.Size/0.0.1280.680@0.0.1280.680" timestamp="1602799224393" />
+    <state x="469" y="164" key="SettingsEditor" timestamp="1603385489372">
+      <screen x="0" y="23" width="1920" height="1005" />
+    </state>
+    <state x="469" y="164" key="SettingsEditor/0.23.1920.1005@0.23.1920.1005" timestamp="1603385489371" />
   </component>
 </project>
