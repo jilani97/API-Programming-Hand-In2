@@ -23,14 +23,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08190bff-8384-4027-9ab6-d6522831c130" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Content/Images/cal_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Images/clockicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Images/minus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Images/plus-sign.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Images/switchDestinations.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApplication1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApplication1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Site.css" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Site.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/HomeController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Home/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/WebApplication1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/WebApplication1.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/WebApplication1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/WebApplication1.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/WebApplication1.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/WebApplication1.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/WebApplication1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/WebApplication1.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/WebApplication1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/WebApplication1.pdb" afterDir="false" />
     </list>
@@ -49,8 +51,8 @@
         <option value="$PROJECT_DIR$/Web.config" />
         <option value="$PROJECT_DIR$/Controllers/HomeController.cs" />
         <option value="$PROJECT_DIR$/Content/Site.css" />
-        <option value="$PROJECT_DIR$/Views/Home/Index.cshtml" />
         <option value="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" />
+        <option value="$PROJECT_DIR$/Views/Home/Index.cshtml" />
       </list>
     </option>
   </component>
@@ -102,7 +104,7 @@
       <workItem from="1602799991009" duration="375000" />
       <workItem from="1602882712706" duration="3384000" />
       <workItem from="1602932858344" duration="9492000" />
-      <workItem from="1603543725945" duration="3150000" />
+      <workItem from="1603543725945" duration="10104000" />
     </task>
     <servers />
   </component>
@@ -133,29 +135,29 @@
     </state>
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680/-3840.-1080.1920.1040@0.0.1280.680" timestamp="1602936385869" />
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1602799313749" />
-    <state width="1237" height="89" key="GridCell.Tab.0.bottom" timestamp="1603551124383">
+    <state width="1237" height="89" key="GridCell.Tab.0.bottom" timestamp="1603556230228">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="916" height="162" key="GridCell.Tab.0.bottom/0.0.1280.680/-3840.-1080.1920.1040@-3840.-1080.1920.1040" timestamp="1602955122134" />
-    <state width="1237" height="89" key="GridCell.Tab.0.bottom/0.0.1280.680/-3840.-1080.1920.1040@0.0.1280.680" timestamp="1603551124383" />
+    <state width="1237" height="89" key="GridCell.Tab.0.bottom/0.0.1280.680/-3840.-1080.1920.1040@0.0.1280.680" timestamp="1603556230228" />
     <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1602800369872" />
-    <state width="1237" height="89" key="GridCell.Tab.0.center" timestamp="1603551124382">
+    <state width="1237" height="89" key="GridCell.Tab.0.center" timestamp="1603556230227">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="916" height="162" key="GridCell.Tab.0.center/0.0.1280.680/-3840.-1080.1920.1040@-3840.-1080.1920.1040" timestamp="1602955122134" />
-    <state width="1237" height="89" key="GridCell.Tab.0.center/0.0.1280.680/-3840.-1080.1920.1040@0.0.1280.680" timestamp="1603551124382" />
+    <state width="1237" height="89" key="GridCell.Tab.0.center/0.0.1280.680/-3840.-1080.1920.1040@0.0.1280.680" timestamp="1603556230227" />
     <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1602800369872" />
-    <state width="1237" height="89" key="GridCell.Tab.0.left" timestamp="1603551124382">
+    <state width="1237" height="89" key="GridCell.Tab.0.left" timestamp="1603556230226">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="916" height="162" key="GridCell.Tab.0.left/0.0.1280.680/-3840.-1080.1920.1040@-3840.-1080.1920.1040" timestamp="1602955122134" />
-    <state width="1237" height="89" key="GridCell.Tab.0.left/0.0.1280.680/-3840.-1080.1920.1040@0.0.1280.680" timestamp="1603551124382" />
+    <state width="1237" height="89" key="GridCell.Tab.0.left/0.0.1280.680/-3840.-1080.1920.1040@0.0.1280.680" timestamp="1603556230226" />
     <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1602800369872" />
-    <state width="1237" height="89" key="GridCell.Tab.0.right" timestamp="1603551124382">
+    <state width="1237" height="89" key="GridCell.Tab.0.right" timestamp="1603556230228">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="916" height="162" key="GridCell.Tab.0.right/0.0.1280.680/-3840.-1080.1920.1040@-3840.-1080.1920.1040" timestamp="1602955122134" />
-    <state width="1237" height="89" key="GridCell.Tab.0.right/0.0.1280.680/-3840.-1080.1920.1040@0.0.1280.680" timestamp="1603551124382" />
+    <state width="1237" height="89" key="GridCell.Tab.0.right/0.0.1280.680/-3840.-1080.1920.1040@0.0.1280.680" timestamp="1603556230228" />
     <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1602800369872" />
     <state x="233" y="73" key="Rider.ProjectTemplateDialog.Size" timestamp="1602799224393">
       <screen x="0" y="0" width="1280" height="680" />
