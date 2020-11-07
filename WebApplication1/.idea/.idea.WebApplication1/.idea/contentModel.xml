@@ -29,6 +29,10 @@
       <e p="Controllers" t="Include">
         <e p="HomeController.cs" t="Include" />
       </e>
+      <e p="DAL" t="Include">
+        <e p="TrainTicketContext.cs" t="Include" />
+        <e p="TrainTicketInitializer.cs" t="Include" />
+      </e>
       <e p="favicon.ico" t="Include" />
       <e p="fonts" t="Include">
         <e p="glyphicons-halflings-regular.eot" t="Include" />
@@ -40,7 +44,11 @@
       <e p="Global.asax" t="Include" />
       <e p="Global.asax.cs" t="Include" />
       <e p="live-reload.js" t="Include" />
-      <e p="Models" t="Include" />
+      <e p="Models" t="Include">
+        <e p="Receipt.cs" t="Include" />
+        <e p="Ticket.cs" t="Include" />
+        <e p="User.cs" t="Include" />
+      </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
       <e p="packages.config" t="Include" />
