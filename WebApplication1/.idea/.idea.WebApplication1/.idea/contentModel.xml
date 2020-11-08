@@ -30,6 +30,7 @@
         <e p="HomeController.cs" t="Include" />
       </e>
       <e p="DAL" t="Include">
+        <e p="NpgSqlCon.cs" t="Include" />
         <e p="TrainTicketContext.cs" t="Include" />
         <e p="TrainTicketInitializer.cs" t="Include" />
       </e>
@@ -77,6 +78,7 @@
         <e p="Home" t="Include">
           <e p="Index.cshtml" t="Include" />
           <e p="purchase.cshtml" t="Include" />
+          <e p="receipts.cshtml" t="Include" />
         </e>
         <e p="Shared" t="Include">
           <e p="_Layout.cshtml" t="Include" />

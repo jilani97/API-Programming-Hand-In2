@@ -8,6 +8,7 @@ namespace WebApplication1.DAL
     {
         public TrainTicketContext() : base("TrainTicketContext")
         {
+            
         }
         
         public DbSet<User> Users { get; set; }
