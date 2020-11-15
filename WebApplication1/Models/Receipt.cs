@@ -11,6 +11,8 @@ namespace WebApplication1.Models
         [Required] 
         public DateTime PurchaseDate { get; set; } 
 
+        public TimeTableRoutes TicketPurchased { get; set; }
+
         public virtual Ticket Ticket { get; set; }
 
     }

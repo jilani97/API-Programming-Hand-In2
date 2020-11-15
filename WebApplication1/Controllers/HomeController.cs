@@ -55,11 +55,58 @@ namespace WebApplication1.Controllers
             return Json(locationStops.ToList().FindAll(x => x.location.Contains(searchInput)), JsonRequestBehavior.AllowGet);
         }
 
+        [ChildActionOnly]
+        public ActionResult Timetable(Ticket route)
+        {
+            if (route.DestinationFrom != null)
+            {
+                TimeSpan t15Minutes = new TimeSpan(0, 0, 15, 0);
+                TimeSpan t30Minutes = new TimeSpan(0, 0, 30, 0);
+                TimeSpan t45Minutes = new TimeSpan(0, 0, 45, 0);
+                TimeSpan t60Minutes = new TimeSpan(0, 1, 0, 0);
 
+                var totalPrice = 0;
+                totalPrice += 37 * route.AdultsTravelling;
+                totalPrice += 30 * route.StudentsTravelling;
+                totalPrice += 15 * route.ChildrenTravelling;
+                List<TimeTableRoutes> routesGenerated = new List<TimeTableRoutes> {
+                new TimeTableRoutes{
+                    Depart = route.TravelTime  + t15Minutes,
+                    Timeleft = (DateTime.Now - (route.TravelTime + t15Minutes)).ToString("mm"),
+                    Track = route.DestinationFrom,
+                    TrainNumber = route.DestinationTo.Substring(1,2).ToUpper()+"37",
+                    Price = totalPrice },
+                new TimeTableRoutes{
+                    Depart = route.TravelTime + t30Minutes,
+                    Timeleft = (DateTime.Now - (route.TravelTime + t30Minutes)).ToString("mm"),
+                    Track = route.DestinationFrom,
+                    TrainNumber = route.DestinationTo.Substring(1,2)+"22",
+                    Price = totalPrice },
+                new TimeTableRoutes{
+                    Depart = route.TravelTime + t45Minutes,
+                    Timeleft = (DateTime.Now - (route.TravelTime + t45Minutes)).ToString("mm"),
+                    Track = route.DestinationFrom,
+                    TrainNumber = route.DestinationTo.Substring(1,2)+"72",
+                    Price = totalPrice },
+                new TimeTableRoutes{
+                    Depart = route.TravelTime + t60Minutes,
+                    Timeleft = (DateTime.Now - (route.TravelTime + t60Minutes)).ToString("mm"),
+                    Track = route.DestinationFrom,
+                    TrainNumber = route.DestinationTo.Substring(1,2)+"77",
+                    Price = totalPrice },
 
-         public ActionResult Purchase()
+            };           
+            
+            return PartialView("Timetable", routesGenerated.ToList());
+            }
+            List<TimeTableRoutes> emtpyRoute = new List<TimeTableRoutes>();
+            return PartialView(emtpyRoute);
+        }
+
+        public ActionResult Purchase(DateTime Depart, string TimeLeft, string Track, string TrainNumber, int Price)
          {
-             return View();
+            var Ticket = new TimeTableRoutes { Depart = Depart, Timeleft = TimeLeft, Track = Track, TrainNumber = TrainNumber, Price = Price };
+             return View(Ticket);
          }
 
          [HttpGet]

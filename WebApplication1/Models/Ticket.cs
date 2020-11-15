@@ -23,6 +23,9 @@ namespace WebApplication1.Models
         [Required] 
         [MinLength(2)] 
         public string DestinationTo { get; set; } 
+
+        public DateTime TravelTime { get; set; }
+        public DateTime TravelDate { get; set; }
                 
         public int AdultsTravelling { get; set; }
         public int StudentsTravelling { get; set; }

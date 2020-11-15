@@ -1,22 +1,28 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Norwegian Rails</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+
+    <script type="text/javascript" src="~/Scripts/DestinationFromAndTo.js"></script>
+    <script type="text/javascript" src="~/Scripts/Tickets.js"></script>
+    <link rel="stylesheet" href="~/Stylesheet/MDRails.less" />
 </head>
 <body>
 <nav class="navbar navbar-light bg-light">
     <div class="navbar-brand ml-4">
-        <img src="../../Content/Images/Rails_Logo.png"> NORWEGIAN RAILS
+        <a href="~/Views/Home/Index.cshtml"> <img src="../../Content/Images/Rails_Logo.png"> NORWEGIAN RAILS</a>
     </div>
+
     <div>
         @Html.ActionLink("Receipts", "receipts", "Home", null, new { @class = "h5" })
     </div>
 </nav>
-<div class="container p-4 pt-5">
+<div class="container p-1 pt-5">
     @RenderBody()
     <hr/>
     <footer>

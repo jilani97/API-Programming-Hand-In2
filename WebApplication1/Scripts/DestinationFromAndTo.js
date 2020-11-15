@@ -69,19 +69,27 @@ $(document).ready(function () {
     $('.destination-dropdown').focusout(function () {
         $('.destination-menu').hide();
     });
+ 
 
-
-    $("#purchaseBtn").click(function (e) {
+    $("#showTimeTable").click(function (e) {
         //Serialize the form datas.   
         var valdata = $("#purchaseTicketForm").serialize();
-        //to get alert popup   
-        alert(valdata);
+        var timetable = $("#selectRouteForm");
+
         $.ajax({
-            url: "/Home/PurchaseTicket",
-            type: "POST",
+            url: "/Home/Timetable",
+            type: "GET",
             dataType: 'json',
             contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-            data: valdata
+            data: valdata,
+            success: function (data) {
+                timetable.load("/Home/Timetable");
+            }
         });
+
     });   
+
+
+
+
 });

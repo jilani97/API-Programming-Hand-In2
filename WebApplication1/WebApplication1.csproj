@@ -390,6 +390,7 @@
     <Compile Include="Models\Class1.cs" />
     <Compile Include="Models\Receipt.cs" />
     <Compile Include="Models\Ticket.cs" />
+    <Compile Include="Models\TimeTableRoutes.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -441,6 +442,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Stylesheet\MDRails.less" />
+    <Content Include="Views\Home\Timetable.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

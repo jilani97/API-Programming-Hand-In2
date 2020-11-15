@@ -1,0 +1,31 @@
+﻿@model List<WebApplication1.Models.TimeTableRoutes>
+
+<div class="col-md-12 table-responsive">
+    <h3 class="text-center"><strong>TIME TABLE</strong></h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Depart</th>
+                <th>Time left</th>
+                <th>Track</th>
+                <th>Train</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+
+                <tr>
+                    <td> @Html.DisplayFor(modelItem => item.Depart.TimeOfDay)</td>
+                    <td> @Html.DisplayFor(modelItem => item.Timeleft)</td>
+                    <td> @Html.DisplayFor(modelItem => item.Track)</td>
+                    <td> @Html.DisplayFor(modelItem => item.TrainNumber)</td>
+                    <td> @Html.DisplayFor(modelItem => item.Price) NOK</td>
+                    <td>@Html.ActionLink("Purchase", "Purchase", new { Depart = item.Depart, Timeleft = item.Timeleft, Track = item.Track, TrainNumber = item.TrainNumber, Price = item.Price }, new { role = "button", @class = "btn btn-primary" })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

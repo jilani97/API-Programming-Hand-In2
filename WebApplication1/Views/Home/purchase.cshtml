@@ -1,5 +1,28 @@
-@{
+@model WebApplication1.Models.TimeTableRoutes
+@{ 
     ViewBag.Title = "Purchase";
+    var timeleft = Model.Depart - DateTime.Now;
+    var Expires = Model.Depart + new TimeSpan(0, 1, 0, 0);
+    if (timeleft.Minutes < 0)
+    {
+        timeleft = new TimeSpan(0, 0, 0, 0);
+    }
+
 }
 
-<h1>YOo</h1>
+<h1 class="text-center">Your Ticket</h1>
+
+<div class="d-flex justify-content-center align-items-center">
+
+    <div class="card" style="width: 20rem;">
+        <img class="card-img-top" src="../../Content/Images/qrcode-ticket-validation.jpg" alt="MD Rails Logo">
+        <div class="card-body">
+            <h4 class="card-title">QR Code for Validation</h4>
+            <p class="card-text">Your train @Model.TrainNumber is leaving in @timeleft.Minutes minutes</p>
+            <p class="card-text">This ticket will expire: <br /><strong>@Expires</strong></p>
+
+            <h5>Have a nice trip, Welcome back to @Model.Track anytime</h5>
+        </div>
+    </div>
+
+</div>
