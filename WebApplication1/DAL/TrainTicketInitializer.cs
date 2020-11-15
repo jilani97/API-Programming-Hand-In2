@@ -17,15 +17,15 @@ namespace WebApplication1.DAL
             users.ForEach(s => context.Users.Add(s));
             var tickets = new List<Ticket>
             {
-            new Ticket{AdultsTravelling = 1, DestinationFrom = "Oslo S", DestinationTo = "Lillestrom", UserId = 1},
-            new Ticket{DestinationFrom = "Oslo S", DestinationTo = "Hauketo", StudentsTravelling = 1, UserId = 2},
+            new Ticket{AdultsTravelling = 1, DestinationFrom = "Oslo S", DestinationTo = "Lillestrom"},
+            new Ticket{DestinationFrom = "Oslo S", DestinationTo = "Hauketo", StudentsTravelling = 1},
             };
             tickets.ForEach(s => context.Tickets.Add(s));
             
             var receipts = new List<Receipt>
             {
-            new Receipt{PurchaseDate =  DateTime.Parse("2020-11-01"), TicketId = 1},
-            new Receipt{PurchaseDate =  DateTime.Parse("2020-11-02"), TicketId = 2},
+            new Receipt{PurchaseDate =  DateTime.Parse("2020-11-01")},
+            new Receipt{PurchaseDate =  DateTime.Parse("2020-11-02")},
             };
             receipts.ForEach(s => context.Receipts.Add(s));
             try
