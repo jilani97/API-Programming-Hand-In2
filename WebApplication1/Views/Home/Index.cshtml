@@ -1,159 +1,109 @@
 ﻿@{ ViewBag.Title = "Home Page"; }
-
 <head>
     <script src="~/Scripts/jquery-3.3.1.js"></script>
-    <script type="text/javascript">
-        var destinationBox;
-        var fromBox;
-        var destinationList;
-        var fromList;
 
-        $(document).ready(function () {
-            destinationBox = $('.destination-dropdown');
-            fromBox = $('.from-dropdown');
-            destinationList = $('.destination-menu');
-            fromList = $('.from-menu');
-
-
-            fromBox.on('input', function () {
-                getAutoComplete(fromBox.val(), fromList);
-                destinationList.hide();
-                fromList.show();
-            });
-
-            destinationBox.on('input', function () {
-                getAutoComplete(destinationBox.val(), destinationList);
-                destinationList.show();
-                fromList.hide();
-            });
-
-            function getAutoComplete(location, list) {
-                var uri = "Home" + "/GetLocation";
-                $.getJSON(uri, { searchInput: location })
-                    .done(function (data) {
-                        list.html("");
-                        var count = 0;
-                        $.each(data, function (key, item) {
-                            //$('<option>').text(item).appendTo('#selectedValue');
-                            var li = $('<li/>').addClass('dropdown-item').attr('role', 'menuitem').html(item.location)
-                                .appendTo(list);
-
-                            count++;
-                        });
-                    });
-            }
-
-            function setText(text) {
-                destinationBox.val(text);
-                getAutoComplete(text);
-            }
-
-            $('.from-dropdown').focusout(function () {
-                $('.from-menu').hide();
-            });
-            $('.destination-dropdown').focusout(function () {
-                $('.destination-menu').hide();
-            });
-        });
-    </script>
+    <script type="text/javascript" src="~/Scripts/DestinationFromAndTo.js"></script>
+    <script type="text/javascript" src="~/Scripts/Tickets.js"></script>
+    <link rel="stylesheet" href="~/Stylesheet/MDRails.less" />
 </head>
 
-<div class="row">
-    <div class="col-md-6 row">
-        <h1>Hi Where do you want to travel ?</h1>
+<div class="container-fluid">
+    <form class="row" id="purchaseTicketForm">
+        <div class="col-md-6 row">
+            <h2>Hi Where do you want to travel ?</h2>
 
-        
-        <div class="dropdown col-md-12">
-            <input type="text" class="from-dropdown form-control" placeholder="Oslo..." />
-            <ul class="dropdown-menu from-menu">
-            </ul>
-        </div>
-
-
-        <div class="pt-2 pb-2 float-right col-md-12">
-            <img src="../../Content/Images/switchDestinations.png">
-        </div>
-
-    <div class="dropdown col-md-12">
-        <input type="text" class="destination-dropdown form-control" placeholder="Ski..."/>
-        <ul class="dropdown-menu destination-menu">
-        </ul>
-    </div>
-
-    <div class="col-md-6 mt-2">
-        <img src="../../Content/Images/clockicon.png"> <input class="w-50">
-    </div>
-    <div class="col-md-6 mt-2"> 
-        <img src="../../Content/Images/cal_icon.png"> <input class="w-50"> 
-    </div>
-
-    </div>
-    <div class="col-md-6">
-        <h3 class="text-center"><strong>TIME TABLE</strong></h3>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Depart</th>
-                    <th>Time left</th>
-                    <th>Track</th>
-                    <th>Train</th>
-                    <th>Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>09:00</td>
-                    <td>1 min left</td>
-                    <td>Track 3</td>
-                    <td>L14</td>
-                    <td>37,-</td>
-                </tr>
-                <tr>
-                    <td>09:00</td>
-                    <td>1 min left</td>
-                    <td>Track 3</td>
-                    <td>L14</td>
-                    <td>37,-</td>
-                </tr>
-                <tr>
-                    <td>09:00</td>
-                    <td>1 min left</td>
-                    <td>Track 3</td>
-                    <td>L14</td>
-                    <td>37,-</td>
-                </tr>
-            </tbody>
-        </table>
-        <p>View more <img src="../../Content/Images/plus-sign.png"></p>
-        <p>
-            <div>
-                <a class="btn btn-primary" href="#">PURCHASE TICKET &raquo; @Html.ActionLink("purchase", "Purchase", "Home")</a>
+            <div class="dropdown col-md-12">
+                <input type="text" name="DestinationFrom" class="from-dropdown form-control" placeholder="Oslo..." required/>
+                <ul class="dropdown-menu from-menu" id="from-menu">
+                </ul>
             </div>
-        </p>
-    </div>
-    <div class="col-md-4">
-        <h1>Total passengers:</h1>
-        <table class="table">
-            <tbody>
-                <tr>
-                    <td><img src="../../Content/Images/minus.png"></td>
-                    <td class="align-middle"><h5>Adult(s)</h5></td>
-                    <td><img src="../../Content/Images/plus-sign.png"></td>
-                    <td class="align-middle">0</td>
-                </tr>
-                <tr>
-                    <td><img src="../../Content/Images/minus.png"></td>
-                    <td class="align-middle">Children</td>
-                    <td><img src="../../Content/Images/plus-sign.png"></td>
-                    <td class="align-middle">0</td>
-                </tr>
-                <tr>
-                    <td><img src="../../Content/Images/minus.png"></td>
-                    <td class="align-middle">Student(s)</td>
-                    <td><img src="../../Content/Images/plus-sign.png"></td>
-                    <td class="align-middle">0</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+
+
+            <div class="pt-2 pb-2 float-right col-md-12">
+                <img src="../../Content/Images/switchDestinations.png" id="switchDestionations">
+            </div>
+
+            <div class="dropdown col-md-12">
+                <input type="text" name="DestinationTo" class="destination-dropdown form-control" placeholder="Ski..." required/>
+                <ul class="dropdown-menu destination-menu" id="destination-menu">
+                </ul>
+            </div>
+
+            <div class="col-md-6 mt-2">
+                <input type="time" name="TravelTime" class="w-75" required>
+            </div>
+            <div class="col-md-6 mt-2">
+                <input type="date" name="TravelTime" class="w-75" required>
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <h3 class="text-center"><strong>TIME TABLE</strong></h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Depart</th>
+                        <th>Time left</th>
+                        <th>Track</th>
+                        <th>Train</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>09:00</td>
+                        <td>1 min left</td>
+                        <td>Track 3</td>
+                        <td>L14</td>
+                        <td>37,-</td>
+                    </tr>
+                    <tr>
+                        <td>09:00</td>
+                        <td>1 min left</td>
+                        <td>Track 3</td>
+                        <td>L14</td>
+                        <td>37,-</td>
+                    </tr>
+                    <tr>
+                        <td>09:00</td>
+                        <td>1 min left</td>
+                        <td>Track 3</td>
+                        <td>L14</td>
+                        <td>37,-</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>View more <img src="../../Content/Images/plus-sign.png"></p>
+            <p>
+                <div>
+                    <input id="purchaseBtn" role="button" class="btn btn-primary" type="submit" value="PURCHASE TICKET" />
+                </div>
+            </p>
+        </div>
+        <div class="col-md-6">
+            <h1>Total passengers:</h1>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td id="minusAdults"><img role="button" src="../../Content/Images/minus.png"></td>
+                        <td class="align-middle">Adults</td>
+                        <td id="addAdults"><img role="button" src="../../Content/Images/plus-sign.png"></td>
+                        <td class="align-middle" ><input id="adults" name="AdultsTravelling" style="border:none" value="0"/></td>
+                    </tr>
+                    <tr>
+                        <td id="minusChildren"><img role="button" src="../../Content/Images/minus.png"></td>
+                        <td class="align-middle">Children</td>
+                        <td id="addChildren"><img role="button" src="../../Content/Images/plus-sign.png"></td>
+                        <td class="align-middle"><input id="children" name="ChildrenTravelling" style="border:none" value="0" /></td>
+                    </tr>
+                    <tr>
+                        <td id="minusStudents" role="button"><img src="../../Content/Images/minus.png"></td>
+                        <td class="align-middle">Students</td>
+                        <td id="addStudents" role="button"><img src="../../Content/Images/plus-sign.png"></td>
+                        <td class="align-middle"><input id="students" name="StudentsTravelling" style="border:none" value="0" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
 </div>

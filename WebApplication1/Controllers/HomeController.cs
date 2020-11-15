@@ -24,6 +24,13 @@ namespace WebApplication1.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult PurchaseTicket(Ticket fm)
+        {
+            //Write your database insert code / activities  
+            return RedirectToAction("Purchase", fm);
+        }
+
         [HttpGet]
         public async Task<JsonResult> GetLocation(string searchInput)
         {
@@ -58,7 +65,7 @@ namespace WebApplication1.Controllers
          [HttpGet]
          public ActionResult receipts()
          {
-             List<User> allUsers = db.Users.ToList();
+             List<Ticket> allUsers = db.Tickets.ToList();
              return View(allUsers);
          }
 

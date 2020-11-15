@@ -8,7 +8,8 @@ namespace WebApplication1.DAL
     {
         public TrainTicketContext() : base("TrainTicketContext")
         {
-            
+            Database.CreateIfNotExists();
+            Database.SetInitializer(new TrainTicketInitializer());
         }
         
         public DbSet<User> Users { get; set; }

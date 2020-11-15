@@ -10,19 +10,17 @@ namespace WebApplication1.DAL
         {
             var users = new List<User>
             {
-            new User{Name="Carson",PhoneNumber= "12345678context",Email="CarsonM@gmail.com"},
+            new User{Name="Carson",PhoneNumber= "12345678",Email="CarsonM@gmail.com"},
             new User{Name="Ola",PhoneNumber= "342123143",Email="OlaN@gmail.com"},
             };
 
             users.ForEach(s => context.Users.Add(s));
-            context.SaveChanges();
             var tickets = new List<Ticket>
             {
-            new Ticket{AdultsTravelling = 1,TravelTime = DateTime.Parse("2020-11-01"), DestinationFrom = "Oslo S", DestinationTo = "Lillestrom", UserId = 1},
-            new Ticket{TravelTime = DateTime.Parse("2020-11-02"), DestinationFrom = "Oslo S", DestinationTo = "Hauketo", StudentsTravelling = 1, UserId = 2},
+            new Ticket{AdultsTravelling = 1, DestinationFrom = "Oslo S", DestinationTo = "Lillestrom", UserId = 1},
+            new Ticket{DestinationFrom = "Oslo S", DestinationTo = "Hauketo", StudentsTravelling = 1, UserId = 2},
             };
             tickets.ForEach(s => context.Tickets.Add(s));
-            context.SaveChanges();
             
             var receipts = new List<Receipt>
             {
@@ -30,7 +28,28 @@ namespace WebApplication1.DAL
             new Receipt{PurchaseDate =  DateTime.Parse("2020-11-02"), TicketId = 2},
             };
             receipts.ForEach(s => context.Receipts.Add(s));
-            context.SaveChanges();
+            try
+            {
+                context.SaveChanges();
+            }
+            catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+            {
+                Exception raise = dbEx;
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        string message = string.Format("{0}:{1}",
+                            validationErrors.Entry.Entity.ToString(),
+                            validationError.ErrorMessage);
+                        // raise a new exception nesting
+                        // the current instance as InnerException
+                        raise = new InvalidOperationException(message, raise);
+                    }
+                }
+                throw raise;
+            }
+            base.Seed(context);
         }
     }
 }

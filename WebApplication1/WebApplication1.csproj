@@ -414,6 +414,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\DestinationFromAndTo.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -424,6 +425,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Tickets.js" />
     <Content Include="Views\Home\purchase.cshtml" />
     <Content Include="Views\Home\receipts.cshtml" />
     <Content Include="Web.config" />
@@ -439,6 +441,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\GetTravelLocation.cshtml" />
+    <Content Include="Stylesheet\MDRails.less" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

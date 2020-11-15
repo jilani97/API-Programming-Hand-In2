@@ -1,6 +1,92 @@
-﻿
-@model IEnumerable<WebApplication1.Models.EnTurAPI>
+﻿<!--
+@(/*Html()
+    .Name("Grid")
+    .HtmlAttributes(new { style = "height:550px;" })
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.ProductName).Title("Product Name");
+        columns.Bound(p => p.UnitPrice).Title("Unit Price");
+        columns.Bound(p => p.UnitsInStock).Title("Units in Stock");
+        columns.Command(command => { command.Edit(); command.Destroy(); }).Width(200);
+    })
+    .ToolBar(toolbar =>
+    {
+        toolbar.Create();
+    })
+    .Editable(editable => editable.Mode(GridEditMode.InLine))
+    .Pageable()
+    .Sortable()
+    .Scrollable()
+    .Groupable()
+    .DataSource(dataSource => dataSource
+        .Custom()
+        .PageSize(20)
+        .Schema(schema =>
+        {
+            schema.Model(model =>
+            {
+                model.Id(p => p.ProductID);
+                model.Field(p => p.ProductID).Editable(false).From("productID");
+                model.Field(p => p.ProductName).From("productName");
+                model.Field(p => p.UnitPrice).From("unitPrice");
+                model.Field(p => p.UnitsInStock).From("unitsInStock");
+            })
+            .Data(d => "schemaData")
+            .Total(t => "schemaTotal");
+        })
+        .Transport(transport => transport
+            .Read(r => r
+                .Url("https://api.entur.io/journey-planner/v2/graphql")
+                .ContentType("application/json")
+                .Type(HttpVerbs.Post)
+                .Data("additionalDataOnRead")
+            )
+            .ParameterMap("parameterMap")
+        )
+    )*/
+)
 
-<ul id="myMenu">
+<script>
 
-</ul>
+    function additionalDataOnRead() {
+        var readQuery = "query {" +
+            "products { productID, productName, unitPrice, unitsInStock }" +
+            "}";
+
+        return { query: readQuery };
+    }
+
+
+    function parameterMap(options, operation) {
+        return kendo.stringify({
+            query: options.query,
+            variables: options.variables
+        });
+    }
+
+    function schemaData(response) {
+        var data = response.data;
+
+        if (data.products) { return data.products; }
+        else if (data.createProduct) { return data.createProduct; }
+        else if (data.updateProduct) { return data.updateProduct; }
+        else if (data.deleteProduct) { return data.deleteProduct; }
+    }
+
+    function schemaTotal(response) {
+        return response.data.products.length;
+    }
+
+    function getQueryFields(model) {
+        var fields = {
+            "productID": model.productID,
+            "productName": model.productName,
+            "unitPrice": model.unitPrice,
+            "unitsInStock": model.unitsInStock
+        };
+
+        return fields;
+    }
+</script>
+
+    -->
