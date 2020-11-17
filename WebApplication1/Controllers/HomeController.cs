@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using WebApplication1.BLL;
 using WebApplication1.DAL;
 using WebApplication1.Models;
 
@@ -19,16 +20,16 @@ namespace WebApplication1.Controllers
     {
         private TrainTicketContext db = new TrainTicketContext();
 
-        public ActionResult Index(string searchInput)
+        private ITicket _BLL;
+
+        public HomeController()
         {
-            return View();
+            _BLL = new TicketBLL();
         }
 
-        [HttpPost]
-        public ActionResult PurchaseTicket(Ticket fm)
+        public ActionResult Index()
         {
-            //Write your database insert code / activities  
-            return RedirectToAction("Purchase", fm);
+            return View();
         }
 
         [HttpGet]
@@ -95,40 +96,63 @@ namespace WebApplication1.Controllers
                     TrainNumber = route.DestinationTo.Substring(1,2)+"77",
                     Price = totalPrice },
 
-            };           
-            
-            return PartialView("Timetable", routesGenerated.ToList());
+            };
+                PurchaseTicketViewModel ticketModel = new PurchaseTicketViewModel { routeList = routesGenerated.ToList(), ticket = route };
+            return PartialView("Timetable", ticketModel);
             }
-            List<TimeTableRoutes> emtpyRoute = new List<TimeTableRoutes>();
+            List<TimeTableRoutes> empty = new List<TimeTableRoutes>();
+            Ticket emptyTicket = new Ticket();
+            PurchaseTicketViewModel emtpyRoute = new PurchaseTicketViewModel { routeList = empty, ticket = emptyTicket };
             return PartialView(emtpyRoute);
         }
 
-        public ActionResult Purchase(DateTime Depart, string TimeLeft, string Track, string TrainNumber, int Price)
+        public ActionResult Purchase(
+            string destFrom, string destTo, int adults, int children, int studs, DateTime travelDate, DateTime travelTime,
+            DateTime depart, string timeLeft, string trainNr, string track, int price
+            )
          {
-            var Ticket = new TimeTableRoutes { Depart = Depart, Timeleft = TimeLeft, Track = Track, TrainNumber = TrainNumber, Price = Price };
-             return View(Ticket);
+            var newRoute = new TimeTableRoutes
+            {
+                Depart = depart,
+                Timeleft = timeLeft,
+                TrainNumber = trainNr,
+                Track = track,
+                Price = price,
+            };
+
+            var newTicket = new Ticket
+            {
+                AdultsTravelling = adults,
+                ChildrenTravelling = children,
+                StudentsTravelling = studs,
+                DestinationFrom = destFrom,
+                TravelDate = travelDate,
+                TravelTime = travelTime,
+                IsValid = true,
+                route = newRoute,
+                DestinationTo = destTo
+            };
+
+            if (ModelState.IsValid)
+            {
+                bool ok = _BLL.CreateTicket(newTicket);
+                bool receiptOK = _BLL.CreateReceipt(newTicket);
+                if (ok && receiptOK)
+                {
+                    return View(newTicket);
+                }
+            }
+
+            return RedirectToAction("Index");
+
          }
 
          [HttpGet]
          public ActionResult receipts()
          {
-             List<Ticket> allUsers = db.Tickets.ToList();
-             return View(allUsers);
+            List<Receipt> allReceipts = _BLL.GetReceiptList();
+             return View(allReceipts);
          }
 
-         public ActionResult Edit(object id)
-         {
-             throw new NotImplementedException();
-         }
-
-         public ActionResult Details(object id)
-         {
-             throw new NotImplementedException();
-         }
-
-         public ActionResult Delete(object id)
-         {
-             throw new NotImplementedException();
-         }
     }
 }

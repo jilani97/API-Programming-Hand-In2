@@ -1,5 +1,12 @@
-﻿@model List<WebApplication1.Models.TimeTableRoutes>
+﻿@model WebApplication1.Models.PurchaseTicketViewModel
+@{
+    if (Model.routeList.Count != 0)
+    {
+        var routes = Model.routeList;
+       // Page.Response.Write("<script>console.log('" + Model.ticket.DestinationFrom + routes.ToList() +"');</script>");
+    }
 
+  }
 <div class="col-md-12 table-responsive">
     <h3 class="text-center"><strong>TIME TABLE</strong></h3>
     <table class="table">
@@ -14,17 +21,26 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
+            @foreach (var item in Model.routeList)
             {
 
-                <tr>
-                    <td> @Html.DisplayFor(modelItem => item.Depart.TimeOfDay)</td>
-                    <td> @Html.DisplayFor(modelItem => item.Timeleft)</td>
-                    <td> @Html.DisplayFor(modelItem => item.Track)</td>
-                    <td> @Html.DisplayFor(modelItem => item.TrainNumber)</td>
-                    <td> @Html.DisplayFor(modelItem => item.Price) NOK</td>
-                    <td>@Html.ActionLink("Purchase", "Purchase", new { Depart = item.Depart, Timeleft = item.Timeleft, Track = item.Track, TrainNumber = item.TrainNumber, Price = item.Price }, new { role = "button", @class = "btn btn-primary" })</td>
-                </tr>
+            <tr>
+                <td> @Html.DisplayFor(modelItem => item.Depart.TimeOfDay)</td>
+                <td> @Html.DisplayFor(modelItem => item.Timeleft)</td>
+                <td> @Html.DisplayFor(modelItem => item.Track)</td>
+                <td> @Html.DisplayFor(modelItem => item.TrainNumber)</td>
+                <td> @Html.DisplayFor(modelItem => item.Price) NOK</td>
+                @if (Model.routeList.Count != 0)
+                {
+                    <td>@Html.ActionLink("Purchase", "Purchase", new {
+                       destFrom = Model.ticket.DestinationFrom, destTo = Model.ticket.DestinationTo, adults = Model.ticket.AdultsTravelling, children = Model.ticket.AdultsTravelling
+                       , studs = Model.ticket.StudentsTravelling, travelDate = Model.ticket.TravelDate, travelTime = Model.ticket.TravelTime,
+                       depart = item.Depart, timeLeft = item.Timeleft, track = item.Track, price = item.Price, trainNr = item.TrainNumber 
+                       },
+                         new { role = "button", @class = "btn btn-primary" })</td>
+
+                }
+            </tr>
             }
         </tbody>
     </table>

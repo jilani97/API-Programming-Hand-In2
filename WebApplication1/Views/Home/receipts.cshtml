@@ -1,4 +1,4 @@
-﻿@model List<WebApplication1.Models.Ticket>
+﻿@model List<WebApplication1.Models.Receipt>
 @{
     ViewBag.Title = "Receipts";
 }
@@ -6,34 +6,40 @@
 <table>
     <tr>
         <th>
-           Name
-        </th>
-        <th>
-            PhoneNumber
+            Purchase date
         </th>
         <th>
             Email
         </th>
-        <th></th>
+        <th>
+            Valid
+        </th>
+        <th>
+            Travel route
+        </th>
+        <th>
+            Price
+        </th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.TicketId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.TicketId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.TicketId })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.PurchaseDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ticket.User.Email)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ticket.IsValid)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ticket.DestinationFrom) -> @Html.DisplayFor(modelItem => item.Ticket.DestinationTo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ticket.route.Price)
+    </td>
+</tr>
 }
 
 </table>

@@ -10,7 +10,11 @@ namespace WebApplication1.Models
 
         [Required] 
         [MinLength(2)] 
-        public string Name { get; set; } 
+        public string FirstName { get; set; }
+
+        [Required]
+        [MinLength(2)]
+        public string LastName { get; set; }
 
         [Phone] 
         public string PhoneNumber { get; set; } 

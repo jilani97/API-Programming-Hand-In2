@@ -379,18 +379,22 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="BLL\ITicket.cs" />
+    <Compile Include="BLL\TicketBLL.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\WebAPIController.cs" />
     <Compile Include="DAL\NpgSqlCon.cs" />
+    <Compile Include="DAL\TicketInterface.cs" />
+    <Compile Include="DAL\Ticket_DAL.cs" />
     <Compile Include="DAL\TrainTicketContext.cs" />
     <Compile Include="DAL\TrainTicketInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Class1.cs" />
+    <Compile Include="Models\EnTurAPI.cs" />
+    <Compile Include="Models\PurchaseTicketViewModel.cs" />
     <Compile Include="Models\Receipt.cs" />
     <Compile Include="Models\Ticket.cs" />
-    <Compile Include="Models\TimeTableRoutes.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

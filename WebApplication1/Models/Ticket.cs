@@ -4,14 +4,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace WebApplication1.Models
 {
-    public class Train
-    {
-        public DateTime Depart { get; set; }
-        public string Track { get; set; }
-        public string TrainNumber { get; set; }
-
-        public int TicketPrice { get; set; }
-    }
     public class Ticket
     {
         [Key]
@@ -31,8 +23,25 @@ namespace WebApplication1.Models
         public int StudentsTravelling { get; set; }
         public int ChildrenTravelling { get; set; }
 
-        
+        public TimeTableRoutes route { get; set; }
+
+        public bool IsValid { get; set; }
+
         public virtual ICollection<Receipt> Receipts { get; set; }
         public virtual User User { get; set; }
+    }
+
+
+    public class TimeTableRoutes
+    {
+        public DateTime Depart { get; set; }
+
+        public string Timeleft { get; set; }
+
+        public string Track { get; set; }
+
+        public string TrainNumber { get; set; }
+
+        public int Price { get; set; }
     }
 }

@@ -10,24 +10,11 @@ namespace WebApplication1.DAL
         {
             var users = new List<User>
             {
-            new User{Name="Carson",PhoneNumber= "12345678",Email="CarsonM@gmail.com"},
-            new User{Name="Ola",PhoneNumber= "342123143",Email="OlaN@gmail.com"},
+            new User{FirstName="Ola", LastName="Nordmann", PhoneNumber= "12345678",Email="CarsonM@gmail.com"},
             };
 
             users.ForEach(s => context.Users.Add(s));
-            var tickets = new List<Ticket>
-            {
-            new Ticket{AdultsTravelling = 1, DestinationFrom = "Oslo S", DestinationTo = "Lillestrom"},
-            new Ticket{DestinationFrom = "Oslo S", DestinationTo = "Hauketo", StudentsTravelling = 1},
-            };
-            tickets.ForEach(s => context.Tickets.Add(s));
-            
-            var receipts = new List<Receipt>
-            {
-            new Receipt{PurchaseDate =  DateTime.Parse("2020-11-01")},
-            new Receipt{PurchaseDate =  DateTime.Parse("2020-11-02")},
-            };
-            receipts.ForEach(s => context.Receipts.Add(s));
+           
             try
             {
                 context.SaveChanges();
