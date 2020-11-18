@@ -9,11 +9,17 @@ var addStudents;
 var minusChildren;
 var addChildren;
 
+var renewTicketBtn;
+var cancelTicketBtn;
+
 $(document).ready(function () {
 
     adultpersons = $('#adults');
     studentPersons = $('#students');
     children = $('#children');
+
+    renewTicketBtn = $('#renewTicket');
+    cancelTicketBtn = $('#cancelTicket');
 
     minusAdults = $('#minusAdults');
     addAdults = $('#addAdults');
@@ -97,6 +103,12 @@ $(document).ready(function () {
         value = parseInt(value) + 1;
         studentPersons.val(value);
     }
+
+    renewTicketBtn.on('click', function () {
+        
+    });
+
+   
 
 
 

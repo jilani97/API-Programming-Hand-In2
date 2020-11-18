@@ -1,10 +1,14 @@
 ﻿@model List<WebApplication1.Models.Receipt>
 @{
     ViewBag.Title = "Receipts";
+    var addHour = new TimeSpan(1, 0, 0);
 }
 
-<table>
+<table class="table table-responsive">
     <tr>
+        <th>
+            Ticket Number
+        </th>
         <th>
             Purchase date
         </th>
@@ -18,23 +22,40 @@
             Travel route
         </th>
         <th>
+            Expiry date
+        </th>
+        <th>
             Price
         </th>
     </tr>
 
 @foreach (var item in Model) {
 <tr>
+    <td>@Html.DisplayFor(modelItem => item.ReceiptId)</td>
     <td>
         @Html.DisplayFor(modelItem => item.PurchaseDate)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.Ticket.User.Email)
+        Ola.Nordmann@gmail.com
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.Ticket.IsValid)
+        @if (item.Ticket.TravelTime <= DateTime.Now && DateTime.Now <= (item.Ticket.TravelTime + addHour) && item.Ticket.IsValid)
+        {
+            <p class="text-success">VALID</p>
+        }
+        @if (!item.Ticket.IsValid || (item.Ticket.TravelTime < DateTime.Now && DateTime.Now >= (item.Ticket.TravelTime + addHour)))
+        {
+            <p class="text-danger">EXPIRED</p>
+        }
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.Ticket.DestinationFrom) -> @Html.DisplayFor(modelItem => item.Ticket.DestinationTo)
+    </td>
+    <td>
+        @{
+            var expire = item.Ticket.TravelTime + addHour;
+        }
+        @expire
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.Ticket.route.Price)

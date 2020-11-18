@@ -19,16 +19,18 @@
         <img class="card-img-top" src="../../Content/Images/qrcode-ticket-validation.jpg" alt="MD Rails Logo">
         @if (timeleft.Minutes > 0 || Model.IsValid)
         {
-    <button class="btn btn-danger">Cancel Ticket</button>
+    @Html.ActionLink("Cancel Ticket", "cancelTicket", new { id = Model.TicketId }, new { @class = "btn btn-danger" })
                     <div class="text-center text-success font-weight-bold">
                         TICKET IS VALID
                     </div>}
         @if (!Model.IsValid)
         {
-    <button class="btn btn-danger">Cancel Ticket</button>
-    <div class="text-danger text-center font-weight-bold">
-        TICKET IS NOT VALID OR EXPIRED
-    </div>}
+            @Html.ActionLink("Renew Ticket", "renewTicket", new { id = Model.TicketId, Model }, new { @class = "btn btn-danger" })
+
+                            <div class="text-danger text-center font-weight-bold">
+                                TICKET IS NOT VALID OR EXPIRED
+                            </div>
+                            }
         <div class="card-body">
             <h4 class="card-title">QR Code for Validation</h4>
             <p class="card-text">Your train @Model.route.TrainNumber to @Model.DestinationTo is leaving in <br /> <strong><i>@timeleft.Minutes minutes</i></strong> </p>

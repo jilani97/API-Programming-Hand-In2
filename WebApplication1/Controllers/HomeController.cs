@@ -147,7 +147,27 @@ namespace WebApplication1.Controllers
 
          }
 
-         [HttpGet]
+        public ActionResult cancelTicket(int id)
+        {
+            bool OK = _BLL.CancelTicket(id);
+            if (OK)
+            {
+                return RedirectToAction("receipts");
+            }
+            return View("receipts");
+        }
+
+        public ActionResult renewTicket(int id, Ticket renewTicket)
+        {
+            bool OK = _BLL.ChangeTicket(id, renewTicket);
+            if (OK)
+            {
+                return RedirectToAction("receipts");
+            }
+            return View("receipts");
+        }
+
+        [HttpGet]
          public ActionResult receipts()
          {
             List<Receipt> allReceipts = _BLL.GetReceiptList();
