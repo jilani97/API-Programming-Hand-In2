@@ -1,0 +1,37 @@
+﻿@model List<WebApplication1.Models.Ticket>
+@{ ViewBag.Title = "Valid tickets"; }
+
+<h1 class="text-center">Your Valid Tickets</h1>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+
+<div class="card col-sm-4">
+    <img class="card-img-top" src="../../Content/Images/qrcode-ticket-validation.jpg" alt="Rails Logo">
+    @if ((item.route.Depart - DateTime.Now).Minutes > 0 || item.IsValid)
+    {
+@Html.ActionLink("Cancel Ticket", "cancelTicket", new { id = item.TicketId }, new { @class = "btn btn-danger" })
+                    <div class="text-center text-success font-weight-bold">
+                        TICKET IS VALID
+                    </div>}
+    @if (!item.IsValid)
+    {
+@Html.ActionLink("Renew Ticket", "renewTicket", new { id = item.TicketId, Model }, new { @class = "btn btn-danger" })
+
+                    <div class="text-danger text-center font-weight-bold">
+                        TICKET IS NOT VALID OR EXPIRED
+                    </div>}
+<div class="card-body">
+    <h4 class="card-title">QR Code for Validation</h4>
+    <p class="card-text">
+        Your train @item.route.TrainNumber to @item.DestinationTo is leaving in <br />
+        <strong><i>@((item.route.Depart - DateTime.Now).Minutes) minutes</i></strong>
+    </p>
+    <p class="card-text">This ticket will expire: <br />
+    <strong>@(item.route.Depart + new TimeSpan(0, 1, 0, 0))</strong></p>
+    <p class="card-text">Passenger count : <br /> <strong> @item.AdultsTravelling adults, @item.ChildrenTravelling children, @item.StudentsTravelling students </strong></p>
+    <h6>Have a nice trip, <br /> Welcome back to @item.DestinationFrom anytime</h6>
+</div>
+</div>}
+</div>

@@ -20,7 +20,5 @@ namespace WebApplication1.DAL
 
         bool CreateTicket(Ticket newTicket);
 
-        bool CreateReceipt(Ticket ticket);
-
     }
 }

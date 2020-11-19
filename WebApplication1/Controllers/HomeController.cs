@@ -106,6 +106,14 @@ namespace WebApplication1.Controllers
             return PartialView(emtpyRoute);
         }
 
+        [HttpGet]
+        public ActionResult ShowValidTicket()
+        {
+            List<Ticket> allTickets = _BLL.GetTicketList();
+            var addHour = new TimeSpan(1, 0, 0);
+            return View(allTickets.FindAll(x=> x.TravelTime <= DateTime.Now && DateTime.Now <= (x.TravelTime + addHour) && x.IsValid ));
+        }
+
         public ActionResult Purchase(
             string destFrom, string destTo, int adults, int children, int studs, DateTime travelDate, DateTime travelTime,
             DateTime depart, string timeLeft, string trainNr, string track, int price
@@ -136,10 +144,9 @@ namespace WebApplication1.Controllers
             if (ModelState.IsValid)
             {
                 bool ok = _BLL.CreateTicket(newTicket);
-                bool receiptOK = _BLL.CreateReceipt(newTicket);
-                if (ok && receiptOK)
+                if (ok)
                 {
-                    return View(newTicket);
+                    return RedirectToAction("ShowValidTicket");
                 }
             }
 

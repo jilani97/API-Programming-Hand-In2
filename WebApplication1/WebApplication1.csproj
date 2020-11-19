@@ -447,6 +447,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Stylesheet\MDRails.less" />
     <Content Include="Views\Home\Timetable.cshtml" />
+    <Content Include="Views\Home\ShowValidTicket.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -26,11 +26,6 @@ namespace WebApplication1.BLL
             return ticket_repo.ChangeTicket(TicketId, editTicket);
         }
 
-        public bool CreateReceipt(Ticket ticket)
-        {
-            return ticket_repo.CreateReceipt(ticket);
-        }
-
         public bool CreateTicket(Ticket newTicket)
         {
             return ticket_repo.CreateTicket(newTicket);

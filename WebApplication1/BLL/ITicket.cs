@@ -20,6 +20,5 @@ namespace WebApplication1.BLL
 
         bool CreateTicket(Ticket newTicket);
 
-        bool CreateReceipt(Ticket ticket);
     }
 }

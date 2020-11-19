@@ -54,27 +54,6 @@ namespace WebApplication1.DAL
             }
         }
 
-        public bool CreateReceipt(Ticket ticket)
-        {
-            var CreateReceipt = new Receipt()
-            {
-                PurchaseDate = DateTime.Now,
-                Ticket = ticket
-            };
-
-            var db = new TrainTicketContext();
-            try
-            {
-                db.Receipts.Add(CreateReceipt);
-                db.SaveChanges();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
-        }
-
         public bool CreateTicket(Ticket newTicket)
         {            
             var db = new TrainTicketContext();
@@ -93,9 +72,18 @@ namespace WebApplication1.DAL
                 User = db.Users.Where(x => x.UserId == 1).FirstOrDefault()
             };
 
+            var CreateReceipt = new Receipt()
+            {
+                PurchaseDate = DateTime.Now,
+                Ticket = CreateTicket
+            };
+
+
             try
             {
                 db.Tickets.Add(CreateTicket);
+                db.SaveChanges();
+                db.Receipts.Add(CreateReceipt);
                 db.SaveChanges();
                 return true;
             }

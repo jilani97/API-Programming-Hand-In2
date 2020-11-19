@@ -1,43 +1,44 @@
-@model WebApplication1.Models.Ticket
+@model List<WebApplication1.Models.Ticket>
 @{ 
     ViewBag.Title = "Purchase";
-    var timeleft = Model.route.Depart - DateTime.Now;
-    var Expires = Model.route.Depart + new TimeSpan(0, 1, 0, 0);
-    if (timeleft.Minutes < 0)
-    {
-        timeleft = new TimeSpan(0, 0, 0, 0);
-        Model.IsValid = false;
-    }
-
 }
 
 <h1 class="text-center">Your Ticket</h1>
 
-<div class="d-flex justify-content-center align-items-center">
-
-    <div class="card" style="width: 20rem;">
-        <img class="card-img-top" src="../../Content/Images/qrcode-ticket-validation.jpg" alt="MD Rails Logo">
-        @if (timeleft.Minutes > 0 || Model.IsValid)
+<div class="row">
+    @foreach(var item in Model) {
+        @{ 
+            var timeleft = item.route.Depart - DateTime.Now;
+            var Expires = item.route.Depart + new TimeSpan(0, 1, 0, 0);
+            if (timeleft.Minutes < 0)
+            {
+                timeleft = new TimeSpan(0, 0, 0, 0);
+                item.IsValid = false;
+            }
+        }
+    <div class="card col-sm">
+        <img class="card-img-top" src="../../Content/Images/qrcode-ticket-validation.jpg" alt="Rails Logo">
+        @if (timeleft.Minutes > 0 || item.IsValid)
         {
-    @Html.ActionLink("Cancel Ticket", "cancelTicket", new { id = Model.TicketId }, new { @class = "btn btn-danger" })
+    @Html.ActionLink("Cancel Ticket", "cancelTicket", new { id = item.TicketId }, new { @class = "btn btn-danger" })
                     <div class="text-center text-success font-weight-bold">
                         TICKET IS VALID
                     </div>}
-        @if (!Model.IsValid)
+        @if (!item.IsValid)
         {
-            @Html.ActionLink("Renew Ticket", "renewTicket", new { id = Model.TicketId, Model }, new { @class = "btn btn-danger" })
+            @Html.ActionLink("Renew Ticket", "renewTicket", new { id = item.TicketId, Model }, new { @class = "btn btn-danger" })
 
                             <div class="text-danger text-center font-weight-bold">
                                 TICKET IS NOT VALID OR EXPIRED
                             </div>
-                            }
+        }
         <div class="card-body">
             <h4 class="card-title">QR Code for Validation</h4>
-            <p class="card-text">Your train @Model.route.TrainNumber to @Model.DestinationTo is leaving in <br /> <strong><i>@timeleft.Minutes minutes</i></strong> </p>
+            <p class="card-text">Your train @item.route.TrainNumber to @item.DestinationTo is leaving in <br /> <strong><i>@timeleft.Minutes minutes</i></strong> </p>
             <p class="card-text">This ticket will expire: <br /><strong>@Expires</strong></p>
-            <p class="card-text">Passenger count : <br /> <strong> @Model.AdultsTravelling adults, @Model.ChildrenTravelling children, @Model.StudentsTravelling students </strong></p>
-            <h6>Have a nice trip, <br /> Welcome back to @Model.DestinationFrom anytime</h6>
+            <p class="card-text">Passenger count : <br /> <strong> @item.AdultsTravelling adults, @item.ChildrenTravelling children, @item.StudentsTravelling students </strong></p>
+            <h6>Have a nice trip, <br /> Welcome back to @item.DestinationFrom anytime</h6>
         </div>
     </div>
-
+    }
 </div>
