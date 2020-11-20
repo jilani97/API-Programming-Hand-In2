@@ -431,7 +431,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\Tickets.js" />
-    <Content Include="Views\Home\purchase.cshtml" />
     <Content Include="Views\Home\receipts.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

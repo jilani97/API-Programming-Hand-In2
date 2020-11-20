@@ -15,21 +15,30 @@ $(document).ready(function () {
     switchDestBtn = $('#switchDestionations');
     destMenuItem = $('.destination-menu-item');
 
-    fromBox.on('keypress', function (e) {
-        if (e.which == 13) {
-        getAutoComplete(fromBox.val(), fromList);
-        }
-        destinationList.hide();
-        fromList.show();
+    fromBox.on(
+        'paste blur focus', function (e) {
+            if (e.type == 'blur') {
+                fromList.hide();
+            }
+            if (e.type != 'blur') {
+                getAutoComplete(fromBox.val(), fromList)
+                fromList.show();
+                destinationList.hide()
+            }
+            
     });
 
-    destinationBox.on('keypress', function (e) {
-        if (e.which == 13) {
-            getAutoComplete(destinationBox.val(), destinationList);
-           }
-        destinationList.show();
-        fromList.hide();
-    });
+    destinationBox.on(
+        'blur paste focus', function (e) {
+            if (e.type == 'blur') {
+                destinationList.hide();
+            }
+            if (e.type != 'blur') {
+                getAutoComplete(destinationBox.val(), destinationList);
+                destinationList.show();
+                fromList.hide()
+            }                
+           });
 
     switchDestBtn.on('click', function () {
         var destVal = destinationBox.val();
@@ -40,7 +49,7 @@ $(document).ready(function () {
 
 
     function getAutoComplete(location, list) {
-        var uri = "Home/GetLocation";
+        var uri = "/Home/GetLocation";
         $.getJSON(uri, { searchInput: location })
             .done(function (data) {
                 list.html("");

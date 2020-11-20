@@ -12,7 +12,7 @@
     @if ((item.route.Depart - DateTime.Now).Minutes > 0 || item.IsValid)
     {
 @Html.ActionLink("Cancel Ticket", "cancelTicket", new { id = item.TicketId }, new { @class = "btn btn-danger" })
-                    <div class="text-center text-success font-weight-bold">
+                    <div class="text-center text-success font-weight-bold" style="color: #18662a">
                         TICKET IS VALID
                     </div>}
     @if (!item.IsValid)
@@ -22,16 +22,18 @@
                     <div class="text-danger text-center font-weight-bold">
                         TICKET IS NOT VALID OR EXPIRED
                     </div>}
-<div class="card-body">
-    <h4 class="card-title">QR Code for Validation</h4>
-    <p class="card-text">
-        Your train @item.route.TrainNumber to @item.DestinationTo is leaving in <br />
-        <strong><i>@((item.route.Depart - DateTime.Now).Minutes) minutes</i></strong>
-    </p>
-    <p class="card-text">This ticket will expire: <br />
-    <strong>@(item.route.Depart + new TimeSpan(0, 1, 0, 0))</strong></p>
-    <p class="card-text">Passenger count : <br /> <strong> @item.AdultsTravelling adults, @item.ChildrenTravelling children, @item.StudentsTravelling students </strong></p>
-    <h6>Have a nice trip, <br /> Welcome back to @item.DestinationFrom anytime</h6>
-</div>
+    <div class="card-body">
+        <h2 class="card-title">QR Code for Validation</h2>
+        <p class="card-text">
+            Your train @item.route.TrainNumber to @item.DestinationTo is leaving in <br />
+            <strong><i>@((item.route.Depart - DateTime.Now).Minutes) minutes</i></strong>
+        </p>
+        <p class="card-text">
+            This ticket will expire: <br />
+            <strong>@(item.route.Depart + new TimeSpan(0, 1, 0, 0))</strong>
+        </p>
+        <p class="card-text">Passenger count : <br /> <strong> @item.AdultsTravelling adults, @item.ChildrenTravelling children, @item.StudentsTravelling students </strong></p>
+        <p class="h5">Have a nice trip, <br /> Welcome back to @item.DestinationFrom anytime</p>
+    </div>
 </div>}
 </div>

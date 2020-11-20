@@ -18,8 +18,6 @@ namespace WebApplication1.Controllers
 
     public class HomeController : Controller
     {
-        private TrainTicketContext db = new TrainTicketContext();
-
         private ITicket _BLL;
 
         public HomeController()

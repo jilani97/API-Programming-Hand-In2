@@ -14,15 +14,15 @@
 </head>
 <body>
     <nav class="navbar navbar-light bg-light">
-        <div class="navbar-brand ml-4">
-            <a href="Index"> <img src="../../Content/Images/Rails_Logo.png"> NORWEGIAN RAILS</a>
-        </div>
+        <a href="Index"> <img alt="Home" aria-describedby="Logo of Norwegian Rails, which is a train on traintracks." src="../../Content/Images/Rails_Logo.png"> NORWEGIAN RAILS</a>
+        <div class="float-right" id="navbarNavDropdown">
+            
 
-        <div>
-            @Html.ActionLink("Receipts", "receipts", "Home", null, new { @class = "h5" })
         </div>
-        <div>
-            @Html.ActionLink("Your Valid Tickets", "ShowValidTicket", "Home", null, new { @class = "h5" })
+        <div class="float-right">
+            @Html.ActionLink("Receipts", "receipts", "Home")
+            <span>&nbsp;|&nbsp;</span>
+            @Html.ActionLink("Your Valid Tickets", "ShowValidTicket", "Home")
         </div>
     </nav>
 <div class="container p-1 pt-5">

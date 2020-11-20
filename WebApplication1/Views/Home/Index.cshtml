@@ -1,31 +1,35 @@
 ﻿@{ ViewBag.Title = "Home Page"; }
+<h1>Hi Where do you want to travel ?</h1>
 
-<form class="row" id="purchaseTicketForm">
+<form class="row mt-5" id="purchaseTicketForm">
+
     <div class="col-md-6 row">
-        <h2>Hi Where do you want to travel ?</h2>
 
         <div class="dropdown col-md-12">
-            <input type="text" name="DestinationFrom" class="from-dropdown form-control" placeholder="Oslo..." required />
+            <label for="destinationFrom">
+                <h2>From:</h2>
+                <input id="destinationFrom" type="text" name="DestinationFrom" class="from-dropdown form-control" placeholder="Oslo..." required />
+            </label>
             <ul class="dropdown-menu from-menu" id="from-menu">
             </ul>
         </div>
 
 
         <div class="pt-2 pb-2 float-right col-md-12">
-            <img src="../../Content/Images/switchDestinations.png" id="switchDestionations">
+            <img alt="switch destinations" src="../../Content/Images/switchDestinations.png" id="switchDestionations">
         </div>
 
         <div class="dropdown col-md-12">
-            <input type="text" name="DestinationTo" class="destination-dropdown form-control" placeholder="Ski..." required />
+            <label for="destinationTo">  <h2>To:</h2> <input id="destinationTo" type="text" name="DestinationTo" class="destination-dropdown form-control" placeholder="Ski..." required /> </label>
             <ul class="dropdown-menu destination-menu" id="destination-menu">
             </ul>
         </div>
 
         <div class="col-md-6 mt-2">
-            <input type="time" name="TravelTime" class="w-75" required>
+           <label for="tTravel"> Time: <input id="tTravel" type="time" name="TravelTime" class="w-75" required> </label>
         </div>
         <div class="col-md-6 mt-2">
-            <input type="date" name="TravelDate" class="w-75" required>
+            <label for="dTravel" > Date: <input id="dTravel" type="date" name="TravelDate" class="w-75" required></label>
         </div>
 
     </div>
@@ -34,26 +38,26 @@
         <table class="table ">
             <tbody>
                 <tr>
-                    <td id="minusAdults"><img role="button" src="../../Content/Images/minus.png"></td>
+                    <td id="minusAdults" role="button"><img alt="decrease Adults" role="button" src="../../Content/Images/minus.png"></td>
                     <td class="align-middle">Adults</td>
-                    <td id="addAdults"><img role="button" src="../../Content/Images/plus-sign.png"></td>
-                    <td class="align-middle"><input id="adults" class="text-center" name="AdultsTravelling" style="border:none" value="0" /></td>
+                    <td id="addAdults" role="button"><img alt="increase Adults" role="button" src="../../Content/Images/plus-sign.png"></td>
+                    <td class="align-middle"><input type="number" min="0" id="adults" class="text-center" name="AdultsTravelling" style="border:none" value="0" aria-labelledby="number of adults"/></td>
                 </tr>
                 <tr>
-                    <td id="minusChildren"><img role="button" src="../../Content/Images/minus.png"></td>
+                    <td id="minusChildren" role="button"><img alt="decrease Children" role="button" src="../../Content/Images/minus.png"></td>
                     <td class="align-middle">Children</td>
-                    <td id="addChildren"><img role="button" src="../../Content/Images/plus-sign.png"></td>
-                    <td class="align-middle"><input id="children" class="text-center" name="ChildrenTravelling" style="border:none" value="0" /></td>
+                    <td id="addChildren" role="button"><img alt="increase Children" role="button" src="../../Content/Images/plus-sign.png"></td>
+                    <td class="align-middle"><input type="number" min="0" id="children" class="text-center" name="ChildrenTravelling" style="border:none" value="0" aria-labelledby="number of children"/></td>
                 </tr>
                 <tr>
-                    <td id="minusStudents" role="button"><img src="../../Content/Images/minus.png"></td>
+                    <td id="minusStudents" role="button"><img alt="decrease Students" src="../../Content/Images/minus.png"></td>
                     <td class="align-middle">Students</td>
-                    <td id="addStudents" role="button"><img src="../../Content/Images/plus-sign.png"></td>
-                    <td class="align-middle"><input id="students" class="text-center" name="StudentsTravelling" style="border:none" value="0" /></td>
+                    <td id="addStudents" role="button"><img alt="increase students" src="../../Content/Images/plus-sign.png"></td>
+                    <td class="align-middle"><input type="number" min="0" id="students" class="text-center" name="StudentsTravelling" style="border:none" value="0" aria-labelledby="number of students"/></td>
                 </tr>
             </tbody>
         </table>
-        <input id="showTimeTable" role="button" class="btn btn-outline-info" type="submit" value="See available routes" />
+        <label for="submit"> <input id="showTimeTable" name="submit" role="button" class="btn submitBtn" type="submit" value="See available routes"/> </label>
     </div>
 </form>
 <div id="selectRouteForm">
